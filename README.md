@@ -1,5 +1,8 @@
 ﻿# dotnet-core-razorlight-publish
 
+這個專案主要用來demo如何設定避免使用RazorLight的ASP .NET Core Web API部署上去無法使用的問題。
+詳細可以看部落格：[[faq]ASP .NET Core Web Api使用RazorLight套件部署上Azure Web App執行不起來的故障排除](https://blog.alantsai.net/posts/2019/08/faq-troubleshoot-problem-publish-to-azure-web-app-asp-net-core-web-api-with-razorlight)
+
 
 ## 幫助 (support)
 
@@ -9,18 +12,6 @@
 
 歡迎任何形式的參與，更多資訊請參考  
 [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## 貢獻者 (Contributors)
-
-> 如果有任何要感謝的貢獻者，可以專門寫到 `CONTRIBUTORS.md` 檔案，或者直接在這個檔案裡面列出來。
-
-## 作者 (Authors)
-
-> 假設需要列出專案的作者（和版權有關），那麼可以列在 `AUTHORS.md` 裡面。
-
-## 感謝 (Acknowledgements)
-
-> 如果專案有使用到一些第三方的library或者一些資源想要感謝可以寫在這裡，或者如果內容比較多可以列在 `ACKNOWLEDGMENTS.md` 裡面。
 
 ## 授權 (License)
 

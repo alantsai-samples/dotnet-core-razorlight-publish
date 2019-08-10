@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
+using RazorLight;
 
 namespace DoteNetCore.Reaorlight.Sample.Controllers
 {
@@ -10,11 +13,25 @@ namespace DoteNetCore.Reaorlight.Sample.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        public IHostingEnvironment Env { get; }
+
+        public ValuesController(IHostingEnvironment env)
+        {
+            Env = env;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var engine = new RazorLightEngineBuilder()
+              .UseFilesystemProject(Path.Combine(Env.ContentRootPath, "Template"))
+              .UseMemoryCachingProvider()
+              .Build();
+
+            string result = await engine.CompileRenderAsync("HelloWorld.cshtml", new { Name = "John Doe" });
+
+            return result;
         }
 
         // GET api/values/5
